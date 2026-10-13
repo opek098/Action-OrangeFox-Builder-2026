@@ -66,15 +66,6 @@ A GitHub Actions workflow that builds **OrangeFox Recovery** for any device. You
 
 Check your `AndroidProducts.mk` for the product name. If it is `omni_codename`, set `LUNCH_PREFIX` to `omni`.
 
-## Extra trees
-
-Use `EXTRA_TREES` when your device needs other repositories, for example a common tree. Put one per line:
-
-```
-https://github.com/user/mt6789-common main device/mediatek/mt6789-common
-https://github.com/user/vendor_blobs main vendor/vendor_name
-```
-
 ## Private repositories
 
 1. Create a personal access token with `repo` access.
