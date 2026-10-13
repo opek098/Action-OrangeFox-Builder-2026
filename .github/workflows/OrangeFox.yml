@@ -28,9 +28,9 @@ on:
         required: true
         default: "twrp"
       LUNCH_VARIANT:
-        description: "Varian lunch"
+        description: "Varian lunch (auto = ap2a-eng untuk 14.x, eng untuk branch lama)"
         required: true
-        default: "eng"
+        default: "auto"
       BUILD_TARGET:
         description: "Target build"
         required: true
@@ -157,7 +157,15 @@ jobs:
           export ALLOW_MISSING_DEPENDENCIES=true
           export FOX_BUILD_DEVICE="$DEVICE_NAME"
           export LC_ALL=C
-          lunch "${LUNCH_PREFIX}_${DEVICE_NAME}-${LUNCH_VARIANT}"
+          VARIANT="$LUNCH_VARIANT"
+          if [ "$VARIANT" = "auto" ]; then
+            case "$MANIFEST_BRANCH" in
+              14*) VARIANT="ap2a-eng" ;;
+              *)   VARIANT="eng" ;;
+            esac
+          fi
+          echo "Lunch: ${LUNCH_PREFIX}_${DEVICE_NAME}-${VARIANT}"
+          lunch "${LUNCH_PREFIX}_${DEVICE_NAME}-${VARIANT}"
           mka adbd "$BUILD_TARGET" -j$(nproc --all)
 
       - name: Check the output directory before uploading
