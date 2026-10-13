@@ -134,5 +134,3 @@ Flashing steps can differ per device, so follow your device's own instructions w
 
 - [OrangeFox Recovery Project](https://orangefox.download)
 - [TeamWin Recovery Project](https://github.com/TeamWin)
-# Action-OrangeFox-Builder-2026
-# Action-OrangeFox-Builder-2026
