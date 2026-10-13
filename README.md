@@ -38,7 +38,7 @@ A GitHub Actions workflow that builds **OrangeFox Recovery** for any device. You
 | `DEVICE_PATH` | Where the tree is placed in the source | `device/vendor/codename` |
 | `DEVICE_NAME` | Device codename | `codename` |
 | `LUNCH_PREFIX` | Lunch prefix, `twrp` or `omni` | `twrp` |
-| `LUNCH_VARIANT` | Lunch variant | `eng` |
+| `LUNCH_VARIANT` | Lunch variant. `auto` uses `ap2a-eng` for 14.x and `eng` for older branches | `auto` |
 | `BUILD_TARGET` | Make target | `vendorbootimage` |
 | `JAVA_VERSION` | JDK version | `17` |
 | `RELEASE` | Upload to Releases instead of artifact | `true` |
