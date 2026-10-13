@@ -13,7 +13,7 @@ A GitHub Actions workflow that builds **OrangeFox Recovery** for any device. You
 
 ## Setup
 
-1. Fork or create a repository for the builder
+1. Fork this repository for the builder
 2. Go to **Settings -> Actions -> General -> Workflow permissions** and select **Read and write permissions**.
 3. If you push the workflow file from a terminal using a personal access token, the token needs the `workflow` scope.
 
