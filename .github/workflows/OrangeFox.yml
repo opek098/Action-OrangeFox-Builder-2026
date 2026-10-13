@@ -149,9 +149,6 @@ jobs:
         run: |
           cd $WORKDIR/fox
           if [ -n "$PRE_BUILD_CMD" ]; then bash -c "$PRE_BUILD_CMD"; fi
-          export USE_CCACHE=1
-          export CCACHE_EXEC=/usr/bin/ccache
-          ccache -M 10G
           set +e
           source build/envsetup.sh
           export ALLOW_MISSING_DEPENDENCIES=true
@@ -198,4 +195,3 @@ jobs:
         with:
           name: OrangeFox-${{ inputs.DEVICE_NAME }}-${{ inputs.MANIFEST_BRANCH }}
           path: release/*
-          
